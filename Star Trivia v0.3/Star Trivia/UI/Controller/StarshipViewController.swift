@@ -12,24 +12,24 @@ class StarshipViewController: UIViewController, PersonProtocol, Storyboarded {
     
     weak var coordinator: MainCoordinator?
     
-    @IBOutlet weak var name: UILabel!
-    @IBOutlet weak var model: UILabel!
-    @IBOutlet weak var length: UILabel!
-    @IBOutlet weak var maker: UILabel!
-    @IBOutlet weak var cost: UILabel!
-    @IBOutlet weak var speed: UILabel!
-    @IBOutlet weak var crew: UILabel!
-    @IBOutlet weak var passengers: UILabel!
-    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    @IBOutlet private weak var name: UILabel!
+    @IBOutlet private weak var model: UILabel!
+    @IBOutlet private weak var length: UILabel!
+    @IBOutlet private weak var maker: UILabel!
+    @IBOutlet private weak var cost: UILabel!
+    @IBOutlet private weak var speed: UILabel!
+    @IBOutlet private weak var crew: UILabel!
+    @IBOutlet private weak var passengers: UILabel!
+    @IBOutlet private weak var spinner: UIActivityIndicatorView!
     
-    @IBOutlet weak var previewLabel: FadeButtonAnimation!
-    @IBOutlet weak var nextButtonLabel: FadeButtonAnimation!
+    @IBOutlet private weak var previewLabel: FadeButtonAnimation!
+    @IBOutlet private weak var nextButtonLabel: FadeButtonAnimation!
     
     
     var person: Person?
-    let api = StarshipAPI()
-    var currentStarship = 0
-    var starshipsArray = [String]()
+    private  let api = StarshipAPI()
+    private var currentStarship = 0
+    private var starshipsArray = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,12 +76,12 @@ class StarshipViewController: UIViewController, PersonProtocol, Storyboarded {
         passengers.text = vm.passenger
     }
     
-    @IBAction func previewButtonPressed(_ sender: Any) {
+    @IBAction private func previewButtonPressed(_ sender: Any) {
         currentStarship -= 1
         setupButtons()
     }
     
-    @IBAction func nextButtonPressed(_ sender: Any) {
+    @IBAction private func nextButtonPressed(_ sender: Any) {
         currentStarship += 1
         setupButtons()
     }

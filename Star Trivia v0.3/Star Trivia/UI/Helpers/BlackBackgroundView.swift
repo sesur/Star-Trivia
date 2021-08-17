@@ -16,7 +16,6 @@ class BlackBackgroundView: UIView {
     }
 }
 
-
 class BlackBackgroundButton: UIButton {
     override func awakeFromNib() {
         super.awakeFromNib()

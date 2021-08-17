@@ -12,22 +12,22 @@ class FilmViewController: UIViewController, PersonProtocol, Storyboarded {
     
     weak var coordinator: MainCoordinator?
     
-    @IBOutlet weak var previewFilm: FadeButtonAnimation!
-    @IBOutlet weak var nextFilm: FadeButtonAnimation!
-    @IBOutlet weak var released: UILabel!
-    @IBOutlet weak var producer: UILabel!
-    @IBOutlet weak var director: UILabel!
-    @IBOutlet weak var episode: UILabel!
-    @IBOutlet weak var filmTitle: UILabel!
-    @IBOutlet weak var crowl: UITextView!
-    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    @IBOutlet private weak var previewFilm: FadeButtonAnimation!
+    @IBOutlet private weak var nextFilm: FadeButtonAnimation!
+    @IBOutlet private weak var released: UILabel!
+    @IBOutlet private weak var producer: UILabel!
+    @IBOutlet private weak var director: UILabel!
+    @IBOutlet private weak var episode: UILabel!
+    @IBOutlet private weak var filmTitle: UILabel!
+    @IBOutlet private weak var crowl: UITextView!
+    @IBOutlet private weak var spinner: UIActivityIndicatorView!
     
     
     var person: Person?
     
-    let api = FilmAPI()
-    var filmsArray = [String]()
-    var currentFilm = 0
+    private let api = FilmAPI()
+    private var filmsArray = [String]()
+    private var currentFilm = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,31 +45,30 @@ class FilmViewController: UIViewController, PersonProtocol, Storyboarded {
         spinner.startAnimating()
         api.getFilm(url: url) { (result) in
             switch result {
-            case .success(let film): self.updateDetailsFor(film)
+            case .success(let film):
+                self.spinner.stopAnimating()
+                let vm = FilmViewModel(film)
+                self.updateDetailsFor(vm)
             case .failure(let error): print(error.localizedDescription)
             }
         }
     }
     
-    private func updateDetailsFor(_ film: Film?){
-        spinner.stopAnimating()
-        
-        guard let film = film else {return}
-        filmTitle.text = film.title
-        producer.text = film.producer
-        director.text = film.producer
-        episode.text = String(film.episode)
-        released.text = film.releaseDate
-        let stripped = film.crawl.replacingOccurrences(of: "\n", with: " ")
-        crowl.text = stripped.replacingOccurrences(of: "\r", with: "") 
+    private func updateDetailsFor(_ vm: FilmViewModel){
+        filmTitle.text = vm.title
+        producer.text = vm.producer
+        director.text = vm.producer
+        episode.text = vm.episode
+        released.text = vm.releaseDate
+        crowl.text = vm.crawl
     }
     
-    @IBAction func pressPreviewButton(_ sender: Any) {
+    @IBAction private func pressPreviewButton(_ sender: Any) {
         currentFilm -= 1
         setupButtons()
     }
     
-    @IBAction func pressNextButton(_ sender: Any) {
+    @IBAction private func pressNextButton(_ sender: Any) {
         currentFilm += 1
         setupButtons()
     }
@@ -79,6 +78,26 @@ class FilmViewController: UIViewController, PersonProtocol, Storyboarded {
         previewFilm.isEnabled = currentFilm == 0 ? false: true
         fetchFilmsFrom(url: filmsArray[currentFilm])
     }
-    
-    
+}
+
+struct FilmViewModel {
+    let title: String
+    let episode: String
+    let crawl: String
+    let producer:String
+    let director: String
+    let releaseDate: String
+}
+
+extension FilmViewModel {
+    init(_ film: Film){
+        title = film.title
+        producer = film.producer
+        director = film.producer
+        episode = String(film.episode)
+        releaseDate = film.releaseDate
+        crawl = film.crawl
+            .replacingOccurrences(of: "\n", with: " ")
+            .replacingOccurrences(of: "\r", with: "")
+    }
 }
