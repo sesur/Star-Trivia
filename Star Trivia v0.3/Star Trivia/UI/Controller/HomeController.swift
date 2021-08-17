@@ -21,7 +21,6 @@ class HomeController: UIViewController, PersonProtocol, Storyboarded {
     @IBOutlet weak var gender: UILabel!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
-    //Buttons Label
     @IBOutlet weak var homeWorldLabel: UIButton!
     @IBOutlet weak var vehiclesLabel: UIButton!
     @IBOutlet weak var starshipsLabel: UIButton!
@@ -36,17 +35,14 @@ class HomeController: UIViewController, PersonProtocol, Storyboarded {
     var navigateToStarship: ((Person?) -> Void)?
     var navigateToFilms: ((Person?) -> Void)?
     
-    //MARK: Life Cicle
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        generateRandomPerson()
     }
     
-    //MARK: Events
     @IBAction func pressRandomButton(_ sender: Any) {
         generateRandomPerson()
     }
@@ -63,7 +59,13 @@ class HomeController: UIViewController, PersonProtocol, Storyboarded {
         startSpinning()
         personAPI.parseRandom(url: getRandomNumber()) { (result) in
             switch result {
-            case .success(let person): self.update(person)
+            case .success(let person):
+                self.stopSpinning()
+                
+                self.person = person
+                let vm = HomeViewModel(person: person)
+                self.updateFields(vm)
+                self.updateButtons(vm)
             case .failure(let error): print(error.localizedDescription)
             }
         }
@@ -73,38 +75,23 @@ class HomeController: UIViewController, PersonProtocol, Storyboarded {
         return String(Int.random(in: 1 ... 87))
     }
     
-    private func update(_ person: Person?) {
-        stopSpinning()
-        guard let person = person else { return }
-        self.person = person
-        updateFields(person)
-        updateButtons(person)
+    private func updateFields(_ vm: HomeViewModel) {
+        name?.text = vm.name
+        height?.text = vm.height
+        mass?.text  = vm.mass
+        hair?.text = vm.hair
+        birthYear?.text = vm.birthYear
+        gender?.text = vm.gender
     }
     
-    private func updateFields(_ person: Person?) {
-        guard let person = person else { return }
-        name.text = person.name
-        height.text = person.height
-        mass.text  = person.mass
-        hair.text = person.hair
-        birthYear.text = person.birthYear
-        gender.text = person.gender
-    }
-    
-    private func updateButtons(_ person: Person) {
-        homeWorldLabel.isEnabled = !person.homeWorld.isEmpty
-        starshipsLabel.isEnabled = !person.starshipUrls.isEmpty
-        vehiclesLabel.isEnabled = !person.vehicleUrls.isEmpty
-        filmsLabel.isEnabled = !person.filmUrls.isEmpty
+    private func updateButtons(_ vm: HomeViewModel) {
+        homeWorldLabel.isEnabled = !vm.homeWorld.isEmpty
+        starshipsLabel.isEnabled = !vm.starshipUrls.isEmpty
+        vehiclesLabel.isEnabled = !vm.vehicleUrls.isEmpty
+        filmsLabel.isEnabled = !vm.filmUrls.isEmpty
         
-        animate([homeWorldLabel, starshipsLabel, vehiclesLabel, filmsLabel])
-    }
-    
-    private func animate(_ button: [UIButton]) {
-        button.forEach {
-            if $0.isEnabled == true {
-                self.transformAffine($0)
-            }
+        [homeWorldLabel, starshipsLabel, vehiclesLabel, filmsLabel].forEach {
+            self.transformAffine($0)
         }
     }
     
@@ -116,18 +103,44 @@ class HomeController: UIViewController, PersonProtocol, Storyboarded {
         }
     }
     
-    
-    
-    @IBAction func pressHomeWorldButton(_ sender: Any) {
+    @IBAction private func pressHomeWorldButton(_ sender: Any) {
         navigateHome?(person)
     }
-    @IBAction func pressVehicleButton(_ sender: Any) {
+    @IBAction private func pressVehicleButton(_ sender: Any) {
         navigateToVehicle?(person)
     }
-    @IBAction func pressStarshipButton(_ sender: Any) {
+    @IBAction private func pressStarshipButton(_ sender: Any) {
         navigateToStarship?(person)
     }
-    @IBAction func pressFilmsButton(_ sender: Any) {
+    @IBAction private func pressFilmsButton(_ sender: Any) {
         navigateToFilms?(person)
+    }
+}
+
+struct HomeViewModel {
+    let name: String
+    let height: String
+    let mass: String
+    let hair: String
+    let birthYear: String
+    let gender: String
+    let homeWorld: String
+    let filmUrls: [String]
+    let vehicleUrls: [String]
+    let starshipUrls: [String]
+}
+
+extension HomeViewModel {
+    init(person: Person) {
+        name = person.name
+        height = person.height
+        mass  = person.mass
+        hair = person.hair
+        birthYear = person.birthYear
+        gender = person.gender
+        homeWorld = person.homeWorld
+        filmUrls = person.filmUrls
+        vehicleUrls = person.vehicleUrls
+        starshipUrls = person.starshipUrls
     }
 }
