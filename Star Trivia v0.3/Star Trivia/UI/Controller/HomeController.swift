@@ -13,20 +13,20 @@ protocol PersonProtocol {
 }
 
 class HomeController: UIViewController, PersonProtocol, Storyboarded {
-    @IBOutlet weak var name: UILabel!
-    @IBOutlet weak var height: UILabel!
-    @IBOutlet weak var mass: UILabel!
-    @IBOutlet weak var hair: UILabel!
-    @IBOutlet weak var birthYear: UILabel!
-    @IBOutlet weak var gender: UILabel!
-    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    @IBOutlet private weak var name: UILabel!
+    @IBOutlet private weak var height: UILabel!
+    @IBOutlet private weak var mass: UILabel!
+    @IBOutlet private weak var hair: UILabel!
+    @IBOutlet private weak var birthYear: UILabel!
+    @IBOutlet private weak var gender: UILabel!
+    @IBOutlet private weak var spinner: UIActivityIndicatorView!
     
-    @IBOutlet weak var homeWorldLabel: UIButton!
-    @IBOutlet weak var vehiclesLabel: UIButton!
-    @IBOutlet weak var starshipsLabel: UIButton!
-    @IBOutlet weak var filmsLabel: UIButton!
+    @IBOutlet private weak var homeWorldLabel: UIButton!
+    @IBOutlet private weak var vehiclesLabel: UIButton!
+    @IBOutlet private weak var starshipsLabel: UIButton!
+    @IBOutlet private weak var filmsLabel: UIButton!
     
-    var personAPI = PersonAPI()
+    private var personAPI = PersonAPI()
     var person: Person?
     weak var coordinator: MainCoordinator?
     
@@ -37,6 +37,7 @@ class HomeController: UIViewController, PersonProtocol, Storyboarded {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        generateRandomPerson()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -76,12 +77,12 @@ class HomeController: UIViewController, PersonProtocol, Storyboarded {
     }
     
     private func updateFields(_ vm: HomeViewModel) {
-        name?.text = vm.name
-        height?.text = vm.height
-        mass?.text  = vm.mass
-        hair?.text = vm.hair
-        birthYear?.text = vm.birthYear
-        gender?.text = vm.gender
+        name.text = vm.name
+        height.text = vm.height
+        mass.text  = vm.mass
+        hair.text = vm.hair
+        birthYear.text = vm.birthYear
+        gender.text = vm.gender
     }
     
     private func updateButtons(_ vm: HomeViewModel) {

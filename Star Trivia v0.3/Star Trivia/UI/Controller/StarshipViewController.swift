@@ -55,24 +55,25 @@ class StarshipViewController: UIViewController, PersonProtocol, Storyboarded {
         
         api.getStarship(url: url) { (result) in
             switch result {
-            case .success(let starship): self.updateDetailsOf(starship)
+            case .success(let starship):
+                self.spinner.stopAnimating()
+                let vm = VehicleViewModel(starship: starship)
+                self.updateDetailsOf(vm)
+                
             case .failure(let error): print(error.localizedDescription)
             }
         }
     }
     
-    private func updateDetailsOf(_ starship: Starship?) {
-        spinner.stopAnimating()
-        
-        guard let starship = starship else {return}
-        name.text = starship.name
-        model.text = starship.model
-        length.text = starship.length
-        maker.text = starship.maker
-        cost.text = starship.cost
-        speed.text = starship.speed
-        crew.text = starship.speed
-        passengers.text = starship.passengers
+    private func updateDetailsOf(_ vm: VehicleViewModel) {
+        name.text = vm.name
+        model.text = vm.model
+        length.text = vm.length
+        maker.text = vm.maker
+        cost.text = vm.cost
+        speed.text = vm.speed
+        crew.text = vm.speed
+        passengers.text = vm.passenger
     }
     
     @IBAction func previewButtonPressed(_ sender: Any) {
@@ -89,6 +90,5 @@ class StarshipViewController: UIViewController, PersonProtocol, Storyboarded {
         previewLabel.isEnabled = currentStarship == 0 ? false : true
         nextButtonLabel.isEnabled = currentStarship == starshipsArray.count - 1 ? false : true
         fetchStarshipFrom(starshipsArray[currentStarship])
-        
     }
 }
