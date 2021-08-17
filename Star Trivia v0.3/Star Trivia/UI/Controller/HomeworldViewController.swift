@@ -12,14 +12,14 @@ class HomeworldViewController: UIViewController, PersonProtocol, Storyboarded {
     
     weak var coordinator: MainCoordinator?
     
-    @IBOutlet weak var name: UILabel!
-    @IBOutlet weak var climate: UILabel!
-    @IBOutlet weak var terrain: UILabel!
-    @IBOutlet weak var population: UILabel!
-    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    @IBOutlet private weak var name: UILabel!
+    @IBOutlet private weak var climate: UILabel!
+    @IBOutlet private weak var terrain: UILabel!
+    @IBOutlet private weak var population: UILabel!
+    @IBOutlet private weak var spinner: UIActivityIndicatorView!
     
     var person: Person?
-    let api = HomeworldAPI()
+    private let api = HomeworldAPI()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,18 +31,35 @@ class HomeworldViewController: UIViewController, PersonProtocol, Storyboarded {
         guard let url = person?.homeWorld else {return}
         api.getHomeworldPerson(url: url) { (result) in
             switch result {
-            case .success(let person): self.updateDetailsOf(person)
+            case .success(let homeworld):
+                self.spinner.stopAnimating()
+                let vm = HomeworldViewModel(homeworld)
+                self.updateDetailsOf(vm)
             case .failure(let error): print(error.localizedDescription)
             }
         }
     }
     
-    private func updateDetailsOf(_ person: HomeworldPerson?) {
-        spinner.stopAnimating()
-        guard let person = person else {return}
+    private func updateDetailsOf(_ person: HomeworldViewModel) {
         name.text = person.name
         climate.text = person.climate
         terrain.text = person.terrain
         population.text = person.population
     }
+}
+
+struct HomeworldViewModel {
+    let name: String
+    let climate: String
+    let terrain: String
+    let population: String
+}
+
+extension HomeworldViewModel {
+    init(_ homeworld: HomeworldPerson) {
+         name = homeworld.name
+         climate = homeworld.climate
+         terrain = homeworld.terrain
+         population = homeworld.population
+     }
 }
