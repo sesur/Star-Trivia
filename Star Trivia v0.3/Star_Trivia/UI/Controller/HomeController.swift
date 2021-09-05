@@ -13,18 +13,18 @@ protocol PersonProtocol {
 }
 
 class HomeController: UIViewController, PersonProtocol, Storyboarded {
-    @IBOutlet private weak var name: UILabel!
-    @IBOutlet private weak var height: UILabel!
-    @IBOutlet private weak var mass: UILabel!
-    @IBOutlet private weak var hair: UILabel!
-    @IBOutlet private weak var birthYear: UILabel!
-    @IBOutlet private weak var gender: UILabel!
-    @IBOutlet private weak var spinner: UIActivityIndicatorView!
+    @IBOutlet private (set) weak var name: UILabel!
+    @IBOutlet private (set) weak var height: UILabel!
+    @IBOutlet private (set) weak var mass: UILabel!
+    @IBOutlet private (set) weak var hair: UILabel!
+    @IBOutlet private (set) weak var birthYear: UILabel!
+    @IBOutlet private (set) weak var gender: UILabel!
+    @IBOutlet private (set) weak var spinner: UIActivityIndicatorView!
     
-    @IBOutlet private weak var homeWorldLabel: UIButton!
-    @IBOutlet private weak var vehiclesLabel: UIButton!
-    @IBOutlet private weak var starshipsLabel: UIButton!
-    @IBOutlet private weak var filmsLabel: UIButton!
+    @IBOutlet private (set) weak var homeWorldLabel: UIButton!
+    @IBOutlet private (set) weak var vehiclesLabel: UIButton!
+    @IBOutlet private (set) weak var starshipsLabel: UIButton!
+    @IBOutlet private (set) weak var filmsLabel: UIButton!
     
     private var personAPI = PersonAPI()
     var person: Person?

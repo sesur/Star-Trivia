@@ -28,7 +28,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Star Trivia" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ONq-Bz-3K4">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Star_Trivia" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ONq-Bz-3K4">
                                 <rect key="frame" x="20" y="64" width="374" height="80"/>
                                 <fontDescription key="fontDescription" name="StarJediHollow" family="Star Jedi Hollow" pointSize="50"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -259,7 +259,7 @@
                         <outlet property="gender" destination="8XV-3B-pyI" id="5y5-Br-18b"/>
                         <outlet property="hair" destination="YKN-z8-bBO" id="VTC-nX-kNw"/>
                         <outlet property="height" destination="XVJ-Gm-eEd" id="Zdh-Lw-ubb"/>
-                        <outlet property="homeWorldLabel" destination="dxd-k6-U6m" id="mk5-7G-nrY"/>
+                        <outlet property="homeWorldLabel" destination="dxd-k6-U6m" id="n1D-Qz-4PG"/>
                         <outlet property="mass" destination="qh9-2R-u8k" id="yOk-fC-wOr"/>
                         <outlet property="name" destination="fFd-xy-Hmj" id="PO0-MH-FGQ"/>
                         <outlet property="spinner" destination="VTc-Hr-O0u" id="qiA-Eg-vhS"/>
