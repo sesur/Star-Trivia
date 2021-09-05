@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Star Trivia.xcodeproj">
+      location = "group:/Users/sergiu/Documents/Star-Trivia/Star Trivia v0.3/Star_Trivia.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
