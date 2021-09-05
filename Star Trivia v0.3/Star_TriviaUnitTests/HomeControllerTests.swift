@@ -27,8 +27,6 @@ class HomeControllerTests: XCTestCase {
         XCTAssertNotNil(makeSUT().vehiclesLabel, "vehiclesLabel")
         XCTAssertNotNil(makeSUT().starshipsLabel, "starshipsLabel")
         XCTAssertNotNil(makeSUT().filmsLabel, "filmsLabel")
-        
-
     }
     
     //MARK:- Helpers

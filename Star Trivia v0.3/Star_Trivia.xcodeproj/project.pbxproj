@@ -36,6 +36,7 @@
 		7D594420223F5B800007193D /* StarshipAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D59441F223F5B800007193D /* StarshipAPI.swift */; };
 		7D5944222240A0E60007193D /* Film.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5944212240A0E60007193D /* Film.swift */; };
 		7D5944242240A27A0007193D /* FilmAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5944232240A27A0007193D /* FilmAPI.swift */; };
+		7DBF104726E4E46500C06E21 /* VehicleViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBF104626E4E46500C06E21 /* VehicleViewControllerTests.swift */; };
 		7DFB818F223A1A8F00B7CFE9 /* FadeButtonAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFB818E223A1A8F00B7CFE9 /* FadeButtonAnimation.swift */; };
 		EA70090C2BF93B10BE5ED57E /* Pods_Star_Trivia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C3F1332D0EA7C65DDBDAB0B /* Pods_Star_Trivia.framework */; };
 /* End PBXBuildFile section */
@@ -84,6 +85,7 @@
 		7D59441F223F5B800007193D /* StarshipAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarshipAPI.swift; sourceTree = "<group>"; };
 		7D5944212240A0E60007193D /* Film.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Film.swift; sourceTree = "<group>"; };
 		7D5944232240A27A0007193D /* FilmAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmAPI.swift; sourceTree = "<group>"; };
+		7DBF104626E4E46500C06E21 /* VehicleViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleViewControllerTests.swift; sourceTree = "<group>"; };
 		7DFB818E223A1A8F00B7CFE9 /* FadeButtonAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeButtonAnimation.swift; sourceTree = "<group>"; };
 		8C3F1332D0EA7C65DDBDAB0B /* Pods_Star_Trivia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Star_Trivia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD500D18204FA3732286BB04 /* Pods-Star Trivia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Star Trivia.debug.xcconfig"; path = "Target Support Files/Pods-Star Trivia/Pods-Star Trivia.debug.xcconfig"; sourceTree = "<group>"; };
@@ -246,6 +248,7 @@
 			children = (
 				7D40275526E4D7CD0080F118 /* Info.plist */,
 				7D40275B26E4D8410080F118 /* HomeControllerTests.swift */,
+				7DBF104626E4E46500C06E21 /* VehicleViewControllerTests.swift */,
 			);
 			path = Star_TriviaUnitTests;
 			sourceTree = "<group>";
@@ -476,6 +479,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DBF104726E4E46500C06E21 /* VehicleViewControllerTests.swift in Sources */,
 				7D40275C26E4D8410080F118 /* HomeControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

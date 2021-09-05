@@ -13,17 +13,17 @@ class VehicleViewController: UIViewController, PersonProtocol, Storyboarded {
     weak var coordinator: MainCoordinator?
     var person: Person?
     
-    @IBOutlet private weak var name: UILabel!
-    @IBOutlet private weak var model: UILabel!
-    @IBOutlet private weak var length: UILabel!
-    @IBOutlet private weak var maker: UILabel!
-    @IBOutlet private weak var cost: UILabel!
-    @IBOutlet private weak var speed: UILabel!
-    @IBOutlet private weak var crew: UILabel!
-    @IBOutlet private weak var passenger: UILabel!
-    @IBOutlet private weak var previewButton: UIButton!
-    @IBOutlet private weak var nextButton: UIButton!
-    @IBOutlet private weak var spinner: UIActivityIndicatorView!
+    @IBOutlet private (set) weak var name: UILabel!
+    @IBOutlet private (set) weak var model: UILabel!
+    @IBOutlet private (set) weak var length: UILabel!
+    @IBOutlet private (set) weak var maker: UILabel!
+    @IBOutlet private (set) weak var cost: UILabel!
+    @IBOutlet private (set) weak var speed: UILabel!
+    @IBOutlet private (set) weak var crew: UILabel!
+    @IBOutlet private (set) weak var passenger: UILabel!
+    @IBOutlet private (set) weak var previewButton: UIButton!
+    @IBOutlet private (set) weak var nextButton: UIButton!
+    @IBOutlet private (set) weak var spinner: UIActivityIndicatorView!
     
     private let api = VehicleAPI()
     private var vehiclesArray = [String]()
