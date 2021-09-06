@@ -12,11 +12,11 @@ class HomeworldViewController: UIViewController, PersonProtocol, Storyboarded {
     
     weak var coordinator: MainCoordinator?
     
-    @IBOutlet private weak var name: UILabel!
-    @IBOutlet private weak var climate: UILabel!
-    @IBOutlet private weak var terrain: UILabel!
-    @IBOutlet private weak var population: UILabel!
-    @IBOutlet private weak var spinner: UIActivityIndicatorView!
+    @IBOutlet private (set) weak var name: UILabel!
+    @IBOutlet private (set) weak var climate: UILabel!
+    @IBOutlet private (set) weak var terrain: UILabel!
+    @IBOutlet private (set) weak var population: UILabel!
+    @IBOutlet private (set) weak var spinner: UIActivityIndicatorView!
     
     var person: Person?
     private let api = HomeworldAPI()
