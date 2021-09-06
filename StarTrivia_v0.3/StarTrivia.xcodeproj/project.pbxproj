@@ -37,6 +37,7 @@
 		7D594420223F5B800007193D /* StarshipAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D59441F223F5B800007193D /* StarshipAPI.swift */; };
 		7D5944222240A0E60007193D /* Film.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5944212240A0E60007193D /* Film.swift */; };
 		7D5944242240A27A0007193D /* FilmAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5944232240A27A0007193D /* FilmAPI.swift */; };
+		7D5B57D626E65B0900F1AE78 /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5B57D526E65B0900F1AE78 /* TestHelpers.swift */; };
 		7DBF104726E4E46500C06E21 /* VehicleViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBF104626E4E46500C06E21 /* VehicleViewControllerTests.swift */; };
 		7DBF104926E5E04F00C06E21 /* HomeworldViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBF104826E5E04F00C06E21 /* HomeworldViewControllerTests.swift */; };
 		7DBF104B26E5E30500C06E21 /* StarshipViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBF104A26E5E30500C06E21 /* StarshipViewControllerTests.swift */; };
@@ -92,6 +93,7 @@
 		7D59441F223F5B800007193D /* StarshipAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarshipAPI.swift; sourceTree = "<group>"; };
 		7D5944212240A0E60007193D /* Film.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Film.swift; sourceTree = "<group>"; };
 		7D5944232240A27A0007193D /* FilmAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmAPI.swift; sourceTree = "<group>"; };
+		7D5B57D526E65B0900F1AE78 /* TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelpers.swift; sourceTree = "<group>"; };
 		7DBF104626E4E46500C06E21 /* VehicleViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleViewControllerTests.swift; sourceTree = "<group>"; };
 		7DBF104826E5E04F00C06E21 /* HomeworldViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworldViewControllerTests.swift; sourceTree = "<group>"; };
 		7DBF104A26E5E30500C06E21 /* StarshipViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarshipViewControllerTests.swift; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 				7DBF104826E5E04F00C06E21 /* HomeworldViewControllerTests.swift */,
 				7DBF104A26E5E30500C06E21 /* StarshipViewControllerTests.swift */,
 				7DBF104C26E5E5FD00C06E21 /* FilmViewControllerTests.swift */,
+				7D5B57D526E65B0900F1AE78 /* TestHelpers.swift */,
 			);
 			path = StarTriviaUnitTests;
 			sourceTree = "<group>";
@@ -528,6 +531,7 @@
 				7DBF104726E4E46500C06E21 /* VehicleViewControllerTests.swift in Sources */,
 				7DBF104926E5E04F00C06E21 /* HomeworldViewControllerTests.swift in Sources */,
 				7D40275C26E4D8410080F118 /* HomeControllerTests.swift in Sources */,
+				7D5B57D626E65B0900F1AE78 /* TestHelpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

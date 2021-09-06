@@ -23,10 +23,18 @@ class HomeControllerTests: XCTestCase {
         XCTAssertNotNil(makeSUT().birthYear, "birthYear")
         XCTAssertNotNil(makeSUT().gender, "gender")
         XCTAssertNotNil(makeSUT().spinner, "spinner")
-        XCTAssertNotNil(makeSUT().homeWorldLabel, "homeWorldLabel")
-        XCTAssertNotNil(makeSUT().vehiclesLabel, "vehiclesLabel")
-        XCTAssertNotNil(makeSUT().starshipsLabel, "starshipsLabel")
-        XCTAssertNotNil(makeSUT().filmsLabel, "filmsLabel")
+        XCTAssertNotNil(makeSUT().homeWorldButton, "homeWorldButton")
+        XCTAssertNotNil(makeSUT().vehiclesButton, "vehiclesButton")
+        XCTAssertNotNil(makeSUT().starshipsButton, "starshipsButton")
+        XCTAssertNotNil(makeSUT().filmsButton, "filmsButton")
+    }
+    
+    func test_buttons_buttonTape_shouldTape() {
+        XCTAssertNotNil(tap(makeSUT().randomButton))
+        XCTAssertNotNil(tap(makeSUT().homeWorldButton))
+        XCTAssertNotNil(tap(makeSUT().vehiclesButton))
+        XCTAssertNotNil(tap(makeSUT().starshipsButton))
+        XCTAssertNotNil(tap(makeSUT().filmsButton))
     }
     
     //MARK:- Helpers
@@ -39,4 +47,3 @@ class HomeControllerTests: XCTestCase {
         return sut
     }
 }
-
