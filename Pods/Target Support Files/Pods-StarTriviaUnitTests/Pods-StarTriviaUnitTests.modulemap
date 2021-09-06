@@ -1,0 +1,6 @@
+framework module Pods_StarTriviaUnitTests {
+  umbrella header "Pods-StarTriviaUnitTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

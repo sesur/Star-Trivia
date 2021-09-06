@@ -1,0 +1,16 @@
+
+platform :ios, '12.0'
+
+target 'StarTrivia' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for StarTrivia
+	pod 'Alamofire', '~> 5.0.0-rc.3'
+
+  target 'StarTriviaUnitTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
