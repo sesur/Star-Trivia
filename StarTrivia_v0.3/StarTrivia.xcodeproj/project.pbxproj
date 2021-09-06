@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		77CF096F4018255CFB44C1AA /* Pods_StarTriviaUnitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 815CE0DFCC3E960A6D06DB48 /* Pods_StarTriviaUnitTests.framework */; };
 		7D1D2F34223640F500998C60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1D2F33223640F500998C60 /* AppDelegate.swift */; };
 		7D1D2F36223640F500998C60 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1D2F35223640F500998C60 /* HomeController.swift */; };
 		7D1D2F39223640F500998C60 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D1D2F37223640F500998C60 /* Main.storyboard */; };
@@ -96,6 +97,9 @@
 		7DBF104A26E5E30500C06E21 /* StarshipViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarshipViewControllerTests.swift; sourceTree = "<group>"; };
 		7DBF104C26E5E5FD00C06E21 /* FilmViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmViewControllerTests.swift; sourceTree = "<group>"; };
 		7DFB818E223A1A8F00B7CFE9 /* FadeButtonAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeButtonAnimation.swift; sourceTree = "<group>"; };
+		815CE0DFCC3E960A6D06DB48 /* Pods_StarTriviaUnitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StarTriviaUnitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A581041997B8512A73930EEF /* Pods-StarTriviaUnitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarTriviaUnitTests.release.xcconfig"; path = "Target Support Files/Pods-StarTriviaUnitTests/Pods-StarTriviaUnitTests.release.xcconfig"; sourceTree = "<group>"; };
+		CEA4E4356610C011BA912D92 /* Pods-StarTriviaUnitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarTriviaUnitTests.debug.xcconfig"; path = "Target Support Files/Pods-StarTriviaUnitTests/Pods-StarTriviaUnitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DD500D18204FA3732286BB04 /* Pods-Star Trivia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Star Trivia.debug.xcconfig"; path = "Target Support Files/Pods-Star Trivia/Pods-Star Trivia.debug.xcconfig"; sourceTree = "<group>"; };
 		F1477FBD582316E670B18577 /* Pods-Star Trivia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Star Trivia.release.xcconfig"; path = "Target Support Files/Pods-Star Trivia/Pods-Star Trivia.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -113,6 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77CF096F4018255CFB44C1AA /* Pods_StarTriviaUnitTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				41F740B327096D58674331B1 /* Pods_StarTrivia.framework */,
+				815CE0DFCC3E960A6D06DB48 /* Pods_StarTriviaUnitTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -271,6 +277,8 @@
 				F1477FBD582316E670B18577 /* Pods-Star Trivia.release.xcconfig */,
 				047209B9FB6BA8AE31547BB3 /* Pods-StarTrivia.debug.xcconfig */,
 				6D63C33CB094A5514BDCF9DD /* Pods-StarTrivia.release.xcconfig */,
+				CEA4E4356610C011BA912D92 /* Pods-StarTriviaUnitTests.debug.xcconfig */,
+				A581041997B8512A73930EEF /* Pods-StarTriviaUnitTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -338,6 +346,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7D40275826E4D7CD0080F118 /* Build configuration list for PBXNativeTarget "StarTriviaUnitTests" */;
 			buildPhases = (
+				A9FE75808C1D25A99E36D109 /* [CP] Check Pods Manifest.lock */,
 				7D40274D26E4D7CD0080F118 /* Sources */,
 				7D40274E26E4D7CD0080F118 /* Frameworks */,
 				7D40274F26E4D7CD0080F118 /* Resources */,
@@ -431,6 +440,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StarTrivia/Pods-StarTrivia-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A9FE75808C1D25A99E36D109 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StarTriviaUnitTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C02854097F1EBDF0DD8B7A75 /* [CP] Check Pods Manifest.lock */ = {
@@ -690,6 +721,7 @@
 		};
 		7D40275926E4D7CD0080F118 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CEA4E4356610C011BA912D92 /* Pods-StarTriviaUnitTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
@@ -713,6 +745,7 @@
 		};
 		7D40275A26E4D7CD0080F118 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A581041997B8512A73930EEF /* Pods-StarTriviaUnitTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
