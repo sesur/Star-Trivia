@@ -12,15 +12,15 @@ class FilmViewController: UIViewController, PersonProtocol, Storyboarded {
     
     weak var coordinator: MainCoordinator?
     
-    @IBOutlet private weak var previewFilm: FadeButtonAnimation!
-    @IBOutlet private weak var nextFilm: FadeButtonAnimation!
-    @IBOutlet private weak var released: UILabel!
-    @IBOutlet private weak var producer: UILabel!
-    @IBOutlet private weak var director: UILabel!
-    @IBOutlet private weak var episode: UILabel!
-    @IBOutlet private weak var filmTitle: UILabel!
-    @IBOutlet private weak var crowl: UITextView!
-    @IBOutlet private weak var spinner: UIActivityIndicatorView!
+    @IBOutlet private (set) weak var previewFilm: FadeButtonAnimation!
+    @IBOutlet private (set) weak var nextFilm: FadeButtonAnimation!
+    @IBOutlet private (set) weak var released: UILabel!
+    @IBOutlet private (set) weak var producer: UILabel!
+    @IBOutlet private (set) weak var director: UILabel!
+    @IBOutlet private (set) weak var episode: UILabel!
+    @IBOutlet private (set) weak var filmTitle: UILabel!
+    @IBOutlet private (set) weak var crowl: UITextView!
+    @IBOutlet private (set) weak var spinner: UIActivityIndicatorView!
     
     
     var person: Person?

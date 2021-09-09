@@ -21,10 +21,11 @@ class HomeController: UIViewController, PersonProtocol, Storyboarded {
     @IBOutlet private (set) weak var gender: UILabel!
     @IBOutlet private (set) weak var spinner: UIActivityIndicatorView!
     
-    @IBOutlet private (set) weak var homeWorldLabel: UIButton!
-    @IBOutlet private (set) weak var vehiclesLabel: UIButton!
-    @IBOutlet private (set) weak var starshipsLabel: UIButton!
-    @IBOutlet private (set) weak var filmsLabel: UIButton!
+    @IBOutlet private (set) weak var homeWorldButton: UIButton!
+    @IBOutlet private (set) weak var vehiclesButton: UIButton!
+    @IBOutlet private (set) weak var starshipsButton: UIButton!
+    @IBOutlet private (set) weak var filmsButton: UIButton!
+    @IBOutlet private (set) weak var randomButton: BlackBackgroundButton!
     
     private var personAPI = PersonAPI()
     var person: Person?
@@ -44,7 +45,7 @@ class HomeController: UIViewController, PersonProtocol, Storyboarded {
         super.viewWillAppear(true)
     }
     
-    @IBAction func pressRandomButton(_ sender: Any) {
+    @IBAction func pressRandomButton(_ sender: UIButton) {
         generateRandomPerson()
     }
     
@@ -86,12 +87,12 @@ class HomeController: UIViewController, PersonProtocol, Storyboarded {
     }
     
     private func updateButtons(_ vm: HomeViewModel) {
-        homeWorldLabel.isEnabled = !vm.homeWorld.isEmpty
-        starshipsLabel.isEnabled = !vm.starshipUrls.isEmpty
-        vehiclesLabel.isEnabled = !vm.vehicleUrls.isEmpty
-        filmsLabel.isEnabled = !vm.filmUrls.isEmpty
+        homeWorldButton.isEnabled = !vm.homeWorld.isEmpty
+        starshipsButton.isEnabled = !vm.starshipUrls.isEmpty
+        vehiclesButton.isEnabled = !vm.vehicleUrls.isEmpty
+        filmsButton.isEnabled = !vm.filmUrls.isEmpty
         
-        [homeWorldLabel, starshipsLabel, vehiclesLabel, filmsLabel].forEach {
+        [homeWorldButton, starshipsButton, vehiclesButton, filmsButton].forEach {
             self.transformAffine($0)
         }
     }
