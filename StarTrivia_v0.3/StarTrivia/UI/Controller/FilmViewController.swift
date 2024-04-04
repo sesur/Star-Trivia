@@ -1,11 +1,3 @@
-//
-//  FilmViewController.swift
-//  Star Trivia
-//
-//  Created by Sergiu on 3/15/19.
-//  Copyright © 2019 Sergiu. All rights reserved.
-//
-
 import UIKit
 
 class FilmViewController: UIViewController, PersonProtocol, Storyboarded {
@@ -21,7 +13,6 @@ class FilmViewController: UIViewController, PersonProtocol, Storyboarded {
     @IBOutlet private (set) weak var filmTitle: UILabel!
     @IBOutlet private (set) weak var crowl: UITextView!
     @IBOutlet private (set) weak var spinner: UIActivityIndicatorView!
-    
     
     var person: Person?
     

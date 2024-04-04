@@ -1,11 +1,3 @@
-//
-//  FadeButtonAnimation.swift
-//  Star Trivia
-//
-//  Created by Sergiu on 3/14/19.
-//  Copyright © 2019 Sergiu. All rights reserved.
-//
-
 import UIKit
 
 class FadeButtonAnimation : UIButton {

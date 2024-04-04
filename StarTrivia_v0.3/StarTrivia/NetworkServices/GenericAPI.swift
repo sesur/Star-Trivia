@@ -1,11 +1,3 @@
-//
-//  GenericAPI.swift
-//  Star Trivia
-//
-//  Created by Sergiu on 7/10/19.
-//  Copyright © 2019 Sergiu. All rights reserved.
-//
-
 import Foundation
 import Alamofire
 import UIKit
