@@ -7,26 +7,29 @@ enum MyResult<V> {
     case failure(NewotworkingError)
 }
 
-func getGenericData<S: URLConvertible,T: Decodable>(url: S, completion: @escaping (MyResult<T>) -> Void) {
-    AF.request(url).responseJSON { (response) in
-        if let error = response.error {
-            debugPrint(error.localizedDescription)
-            completion(.failure(.invalidResponse))
-            return
+func getGenericData<S: URLConvertible, T: Decodable>(url: S, completion: @escaping (MyResult<T>) -> Void) {
+    AF.request(url)
+        .validate(statusCode: 200..<300) // Optional: Validate the status code range
+        .responseDecodable(of: T.self) { response in
+            switch response.result {
+            case .success(let dataObject):
+                completion(.success(dataObject))
+            case .failure(let error):
+                debugPrint(error.localizedDescription)
+                if let statusCode = response.response?.statusCode {
+                    switch statusCode {
+                    case 400..<500:
+                        completion(.failure(.invalidResponse))
+                    case 500..<600:
+                        completion(.failure(.invalidData))
+                    default:
+                        completion(.failure(.invalidJSON))
+                    }
+                } else {
+                    completion(.failure(.invalidResponse))
+                }
+            }
         }
-        
-        guard let data = response.data else {
-            completion(.failure(.invalidData))
-            return }
-
-        do {
-            let dataObject = try JSONDecoder().decode(T.self, from: data)
-            completion(.success(dataObject))
-        } catch {
-            debugPrint(error.localizedDescription)
-            completion(.failure(.invalidJSON))
-        }
-    }
 }
 
 enum NewotworkingError: String, Error {
