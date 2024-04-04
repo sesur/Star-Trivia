@@ -6,7 +6,7 @@ target 'StarTrivia' do
   use_frameworks!
 
   # Pods for StarTrivia
-	pod 'Alamofire', '~> 5.0.0-rc.3'
+	pod 'Alamofire'
 
   target 'StarTriviaUnitTests' do
     inherit! :search_paths
